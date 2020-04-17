@@ -5,14 +5,25 @@ import (
 	"fmt"
 
 	"reflect"
+	"sync/atomic"
 )
 
 var (
-	// DefaultTagName is the default tag name for struct fields which provides
+	// defaultTagName is the default tag name for struct fields which provides
 	// a more granular to tweak certain structs. Lookup the necessary functions
 	// for more info.
-	DefaultTagName = "structs" // struct's field default tag name
+	defaultTagName = "structs" // struct's field default tag name
+	tagRedefFlag   int32       // flag of  tag  redefined
 )
+
+// InitTag  is  a  manners to  redefine  tag.
+// tag  can not  be  change  again once tag is  redefined.
+func InitTag(tagName string) string {
+	if atomic.CompareAndSwapInt32(&tagRedefFlag, 0, 1) {
+		defaultTagName = tagName
+	}
+	return defaultTagName
+}
 
 // Struct encapsulates a struct type to provide several high level functions
 // around the struct.
@@ -25,10 +36,11 @@ type Struct struct {
 // New returns a new *Struct with the struct s. It panics if the s's kind is
 // not struct.
 func New(s interface{}) *Struct {
+	atomic.StoreInt32(&tagRedefFlag, 1)
 	return &Struct{
 		raw:     s,
 		value:   strctVal(s),
-		TagName: DefaultTagName,
+		TagName: defaultTagName,
 	}
 }
 
