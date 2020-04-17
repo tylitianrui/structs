@@ -1,11 +1,9 @@
-# Archived project. No maintenance. 
+# Structs [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](https://godoc.org/github.com/tylitianrui/structs) [![Build Status](http://img.shields.io/travis/tylitianrui/structs.svg?style=flat-square)](https://travis-ci.org/tylitianrui/structs) 
+## structs  return again.
 
-This project is not maintained anymore and is archived. Feel free to fork and
-make your own changes if needed. For more detail read my blog post: [Taking an indefinite sabbatical from my projects](https://arslan.io/2018/10/09/taking-an-indefinite-sabbatical-from-my-projects/)
+[Archived project](https://github.com/fatih/structs/blob/master/README.md)
 
-Thanks to everyone for their valuable feedback and contributions.
-
-# Structs [![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/fatih/structs) [![Build Status](http://img.shields.io/travis/fatih/structs.svg?style=flat-square)](https://travis-ci.org/fatih/structs) [![Coverage Status](http://img.shields.io/coveralls/fatih/structs.svg?style=flat-square)](https://coveralls.io/r/fatih/structs)
+## Structs
 
 Structs contains various utilities to work with Go (Golang) structs. It was
 initially used by me to convert a struct into a `map[string]interface{}`. With
@@ -16,7 +14,7 @@ functions or improve the existing code.
 ## Install
 
 ```bash
-go get github.com/fatih/structs
+go get github.com/tylitianrui/structs
 ```
 
 ## Usage and Examples
@@ -168,3 +166,7 @@ for _, f := range s.Fields() {
 ## License
 
 The MIT License (MIT) - see LICENSE.md for more details
+
+
+## appreciate 
+[Fatih Arslan](https://github.com/fatih) and [Cihangir Savas](https://github.com/cihangir) have made an outstanding contribution for this progress .
